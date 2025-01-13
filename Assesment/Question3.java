@@ -33,8 +33,8 @@ public class Question3
 		        submitButton.click();
 		        Assert.assertTrue(driver.getPageSource().contains("This field is required."), "Required field message not found!");
 		         // Test special characters
-		        usernameInput.sendKeys("!@#$%");
-		        passwordInput.sendKeys("!@#$%");
+		        usernameInput.sendKeys("Swapna!@#");
+		        passwordInput.sendKeys("Swapna!@#");
 		        submitButton.click();
 		        Assert.assertTrue(driver.getPageSource().contains("Invalid username or password"),  "Error message not found!");
 		                         
@@ -57,7 +57,7 @@ public class Question3
 		    }
 
 		    @AfterClass
-		    public void tearDown() {
+		    public void last() {
 		        driver.quit();
 		    }
 		
