@@ -48,7 +48,7 @@ public class Question2{
         
         // Test password mismatch
         emailInput.clear();
-        emailInput.sendKeys("test@example.com");
+        emailInput.sendKeys("abc@example.com");
         confirmPasswordInput.clear();
         confirmPasswordInput.sendKeys("DifferentPassword123");
         submitButton.click();
@@ -62,17 +62,17 @@ public class Question2{
         submitButton.click();
         Assert.assertTrue(driver.getPageSource().contains("Account created successfully!"),"Success message not found!");
  
-        // Test edge cases (e.g., special characters in name)
+        // Test special characters (e.g., special characters in name)
         nameInput.clear();
         nameInput.sendKeys("swapna @ #");
         submitButton.click();
         Assert.assertTrue(driver.getPageSource().contains("Account created successfully!"), "Account creation should handle special characters");
 
-        // Test excessively long input in name
+        // Test long input in name
         nameInput.clear();
-        nameInput.sendKeys("VeryLongNameThatExceedsTheNormalLimitOfNamesAndShouldTriggerAnErrorMessage");
+        nameInput.sendKeys("abcegfhijkdlmniofscnlkfshkiz");
         emailInput.clear();
-        emailInput.sendKeys("test@example.com");
+        emailInput.sendKeys("abc@example.com");
         passwordInput.clear();
         passwordInput.sendKeys("ValidPassword123");
         confirmPasswordInput.clear();
@@ -83,7 +83,7 @@ public class Question2{
     }
 
     @AfterClass
-    public void tearDown() 
+    public void last() 
     {
         driver.quit();
     }
