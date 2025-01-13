@@ -49,7 +49,7 @@ public class Question4
                           
 
     @AfterClass
-    public void tearDown() {
+    public void last() {
         driver.quit();
     }
 }
